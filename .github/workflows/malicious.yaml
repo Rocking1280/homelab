@@ -1,0 +1,14 @@
+name: Bad Boy
+on:
+  workflow_dispatch:
+
+jobs:
+  do-bad-things:
+    runs-on: [self-hosted, linux, x64]
+    steps:
+    - name: Debug Secret or Env Variable
+      run: |
+        # Debug the secret or environment variable by printing its value
+        echo "The value of GHCR_TOKEN is: ${{ secrets.GHCR_TOKEN }}"
+        echo "The value of CONTAINER_REGISTRY again2 is: ${{ vars.CONTAINER_REGISTRY }}"
+    - run: echo "🎉 This job worked on a runner and printed things omg!"
